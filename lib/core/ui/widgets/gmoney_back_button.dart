@@ -13,7 +13,6 @@ class GMoneyBackButton extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: IconButton(
         onPressed: () {
-          print('shit');
           AppRouter.navigateBack();
         },
         icon: Container(

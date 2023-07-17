@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gmoney_app/core/ui/theme/gmoney_colors.dart';
-
-import '../../utils/app_size.dart';
-import 'gmoney_logo.dart';
+import 'package:gmoney_app/core/ui/widgets/gmoney_logo.dart';
+import 'package:gmoney_app/core/utils/app_size.dart';
 
 class DefaultBackground extends StatelessWidget {
   const DefaultBackground({super.key});
@@ -42,7 +41,7 @@ class DefaultBackground extends StatelessWidget {
             alignment: Alignment.topCenter,
             padding: EdgeInsets.only(top: AppSize.itemHeight(context, 20)),
             child: GMoneyLogo(
-              h: AppSize.itemHeight(context, 42),
+              height: AppSize.itemHeight(context, 42),
             ),
           ),
         ],

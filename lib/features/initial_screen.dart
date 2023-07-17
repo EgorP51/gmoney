@@ -31,7 +31,7 @@ class InitialScreen extends StatelessWidget {
               fit: BoxFit.cover,
               width: double.infinity,
             ),
-            GMoneyLogo(h: MediaQuery.of(context).size.height * 62 / 844)
+            GMoneyLogo(height: MediaQuery.of(context).size.height * 62 / 844)
           ],
         ),
       ),

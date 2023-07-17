@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:gmoney_app/core/ui/theme/gmoney_colors.dart';
 import 'package:gmoney_app/core/ui/widgets/gmoney_logo.dart';
 import 'package:gmoney_app/core/utils/app_size.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/authorization_text.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/forgot_password_text.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/input_widget.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/no_account_widget.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/registration_button.dart';
+import 'package:gmoney_app/features/authorization/presentation/widgets/authorization_text.dart';
+import 'package:gmoney_app/features/authorization/presentation/widgets/forgot_password_text.dart';
+import 'package:gmoney_app/features/authorization/presentation/widgets/input_widget.dart';
+import 'package:gmoney_app/features/authorization/presentation/widgets/no_account_widget.dart';
+import 'package:gmoney_app/features/authorization/presentation/widgets/registration_button.dart';
 
 final List<Widget> initialDecoration = [
   Align(
@@ -217,7 +217,7 @@ class Background extends StatelessWidget {
             alignment: Alignment.topCenter,
             padding: EdgeInsets.only(top: AppSize.itemHeight(context, 20)),
             child: GMoneyLogo(
-              h: AppSize.itemHeight(context, 42),
+              height: AppSize.itemHeight(context, 42),
             ),
           ),
         ],

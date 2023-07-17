@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/authorization_screen.dart';
 import 'package:gmoney_app/features/initial_screen.dart';
-import 'package:gmoney_app/features/password_recovery/presentation/password_change_screen.dart';
-import 'package:gmoney_app/features/password_recovery/presentation/password_recovery_screen.dart';
+import 'package:gmoney_app/features/password_recovery/presentation/screens/password_change_screen.dart';
+import 'package:gmoney_app/features/password_recovery/presentation/screens/password_recovery_screen.dart';
 import 'package:gmoney_app/features/privacy_agreement/presentation/privacy_agreement_screen.dart';
 
 class AppRouter {

@@ -16,7 +16,6 @@ class GMoneyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: add shadow!!
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 5,

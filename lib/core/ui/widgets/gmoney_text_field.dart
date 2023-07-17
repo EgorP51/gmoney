@@ -51,7 +51,6 @@ class GMoneyTextField extends StatelessWidget {
           textAlign: TextAlign.start,
           scrollPadding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          //TODO: может нужно изменить))
           style: TextStyle(
             color: context.gmoneyColors.whiteColor,
             fontFamily: 'Circe',

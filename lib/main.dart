@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:gmoney_app/core/ui/theme/gmoney_colors.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/authorization_screen.dart';
-import 'package:gmoney_app/features/authorization/presentation/screens/authorization_screen/input_widget.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
+import 'package:gmoney_app/features/authorization/domain/controllers/login_controller.dart';
 import 'package:gmoney_app/features/initial_screen.dart';
-import 'package:pixel_perfect/pixel_perfect.dart';
-
-import 'core/navigation/app_router.dart';
-import 'core/utils/app_size.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -37,14 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: AppRouter.initialRoute,
       getPages: AppRouter.pages,
-      home: const InitialScreen(), /*PixelPerfect(
-        assetPath: 'assets/dev/Авторизация.png',
-        scale: 1,
-        initBottom: 20,
-        offset: Offset.zero,
-        initOpacity: 0.4,
-        child: const AuthorizationScreen(),
-      ),*/
+      home: const InitialScreen(),
     );
   }
 }
