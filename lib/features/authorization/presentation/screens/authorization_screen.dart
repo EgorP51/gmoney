@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:gmoney_app/core/ui/theme/gmoney_colors.dart';
 import 'package:gmoney_app/core/ui/widgets/gmoney_logo.dart';
 import 'package:gmoney_app/core/utils/app_size.dart';
+import 'package:gmoney_app/features/authorization/domain/controllers/background_controller.dart';
+import 'package:gmoney_app/features/authorization/domain/controllers/foreground_controller.dart';
 import 'package:gmoney_app/features/authorization/presentation/widgets/authorization_text.dart';
 import 'package:gmoney_app/features/authorization/presentation/widgets/forgot_password_text.dart';
 import 'package:gmoney_app/features/authorization/presentation/widgets/input_widget.dart';
@@ -45,31 +46,6 @@ final List<Widget> validationDecoration = [
     ),
   ),
 ];
-
-class BackgroundController extends GetxController {
-  var isValidation = false.obs;
-
-  void toggleBackground() {
-    isValidation.value = true;
-  }
-}
-
-class ForegroundController extends GetxController {
-  var isValidation = false.obs;
-  RxBool isKeyboardVisible = false.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
-    KeyboardVisibilityController().onChange.listen((bool visible) {
-      isKeyboardVisible.value = visible;
-    });
-  }
-
-  void toggleForeground() async {
-    isValidation.value = true;
-  }
-}
 
 class AuthorizationScreen extends StatelessWidget {
   const AuthorizationScreen({super.key});

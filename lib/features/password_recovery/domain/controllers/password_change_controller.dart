@@ -22,7 +22,11 @@ class PasswordChangeController extends GetxController {
   String? passwordValidator(String? value) {
     RegExp regex = RegExp(r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
 
-    if ((value == null || value.isEmpty) || !regex.hasMatch(value)) {
+    if(value == null || value.isEmpty){
+      return null;
+    }
+
+    if (!regex.hasMatch(value)) {
       return 'Поле должно состоять из символов на латинице, спецсимволов и цифр';
     } else {
       return null;
@@ -33,8 +37,8 @@ class PasswordChangeController extends GetxController {
     RegExp regex = RegExp(r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
 
     if ((value == null || value.isEmpty) &&
-        passwordController.text.isEmpty &&
-        passwordRepeaterController.text.isEmpty) {
+        passwordController.text.isEmpty) {
+
       isPasswordEmpty.value = true;
       isPasswordRepeaterEmpty.value = true;
 

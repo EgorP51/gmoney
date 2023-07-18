@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
 import 'package:gmoney_app/core/ui/theme/gmoney_colors.dart';
 import 'package:gmoney_app/core/ui/widgets/default_background.dart';
 import 'package:gmoney_app/core/ui/widgets/gmoney_back_button.dart';
@@ -49,7 +50,9 @@ class PrivacyAgreementScreen extends StatelessWidget {
                           ),
                         ),
                         enabled: privacyAgreementController.enabled.value,
-                        onPressed: () {},
+                        onPressed: () {
+                          AppRouter.navigateToContactInformation();
+                        },
                       ),
                     ),
                   ],

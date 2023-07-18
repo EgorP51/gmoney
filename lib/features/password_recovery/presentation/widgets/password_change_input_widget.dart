@@ -25,10 +25,13 @@ class PasswordChangeInputWidget extends GetView<PasswordChangeController> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          GMoneyTextField(
-            label: 'Введите новый пароль',
-            controller: controller.passwordController,
-            validator: (value) => controller.passwordValidator(value),
+          Obx(
+            () => GMoneyTextField(
+              label: 'Введите новый пароль',
+              controller: controller.passwordController,
+              isEmptyFieldValidation: controller.isPasswordEmpty.value,
+              validator: (value) => controller.passwordValidator(value),
+            ),
           ),
           GMoneyTextField(
             label: 'Повторите новый пароль',
