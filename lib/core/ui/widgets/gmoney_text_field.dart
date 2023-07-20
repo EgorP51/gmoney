@@ -12,6 +12,7 @@ class GMoneyTextField extends StatelessWidget {
     this.obscureText = false,
     this.onSaved,
     this.onTap,
+    this.suffixIcon,
     this.isEmptyFieldValidation = false,
     super.key,
   });
@@ -24,6 +25,7 @@ class GMoneyTextField extends StatelessWidget {
   final void Function(String?)? onSaved;
   final void Function()? onTap;
   final bool obscureText;
+  final Widget? suffixIcon;
   final bool isEmptyFieldValidation;
 
   @override
@@ -58,10 +60,12 @@ class GMoneyTextField extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           decoration: InputDecoration(
+            suffixIcon: suffixIcon,
             filled: true,
             fillColor: context.gmoneyColors.textFieldColor,
-            contentPadding:
-                EdgeInsets.symmetric(vertical: AppSize.itemHeight(context, 16)),
+            contentPadding: EdgeInsets.symmetric(
+              vertical: AppSize.itemHeight(context, 16),
+            ),
             prefix: const Padding(padding: EdgeInsets.only(left: 20.0)),
             isDense: true,
             label: label == null

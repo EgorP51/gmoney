@@ -5,6 +5,7 @@ import 'package:gmoney_app/features/password_recovery/presentation/screens/passw
 import 'package:gmoney_app/features/password_recovery/presentation/screens/password_recovery_screen.dart';
 import 'package:gmoney_app/features/privacy_agreement/presentation/privacy_agreement_screen.dart';
 import 'package:gmoney_app/features/registration/contact_Information/presentation/screens/contact_information_screen.dart';
+import 'package:gmoney_app/features/registration/personal_data/presentation/screens/personal_data_screen.dart';
 import 'package:gmoney_app/features/registration/sms_confirmation/presentation/screens/sms_confirmation_screen.dart';
 
 class AppRouter {
@@ -15,6 +16,7 @@ class AppRouter {
   static const privacyAgreement = '/privacy_agreement';
   static const contactInformation = '/contact_information';
   static const smsConfirmation = '/sms_confirmation';
+  static const personalData = '/personal_data';
 
   static List<GetPage> get pages => [
         GetPage(name: initialRoute, page: () => const InitialScreen()),
@@ -25,7 +27,12 @@ class AppRouter {
         GetPage(name: privacyAgreement, page: () => PrivacyAgreementScreen()),
         GetPage(name: contactInformation, page: () => const ContactInformationScreen()),
         GetPage(name: smsConfirmation, page: () => const SmsConfirmationScreen()),
+        GetPage(name: personalData, page: () => const PersonalDataScreen()),
       ];
+
+  static void navigateToPersonalData() {
+    Get.toNamed(personalData);
+  }
 
   static void navigateToSmsConfirmation() {
     Get.toNamed(smsConfirmation);

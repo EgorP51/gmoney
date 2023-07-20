@@ -5,7 +5,9 @@ import 'package:gmoney_app/core/ui/widgets/gmoney_logo.dart';
 import 'package:gmoney_app/core/utils/app_size.dart';
 
 class DefaultBackground extends StatelessWidget {
-  const DefaultBackground({super.key});
+  const DefaultBackground({super.key, required this.withLogo});
+
+  final bool withLogo;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +39,14 @@ class DefaultBackground extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Container(
-            alignment: Alignment.topCenter,
-            padding: EdgeInsets.only(top: AppSize.itemHeight(context, 20)),
-            child: GMoneyLogo(
-              height: AppSize.itemHeight(context, 42),
+          if (withLogo)
+            Container(
+              alignment: Alignment.topCenter,
+              padding: EdgeInsets.only(top: AppSize.itemHeight(context, 20)),
+              child: GMoneyLogo(
+                height: AppSize.itemHeight(context, 42),
+              ),
             ),
-          ),
         ],
       ),
     );

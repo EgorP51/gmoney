@@ -14,9 +14,9 @@ class ContactInformationController extends GetxController {
 
   @override
   void onClose() {
-    emailController.dispose();
-    phoneNumberController.dispose();
-    iinController.dispose();
+    emailController.clear();
+    phoneNumberController.clear();
+    iinController.clear();
     super.onClose();
   }
   String? iinValidator(String? value) {

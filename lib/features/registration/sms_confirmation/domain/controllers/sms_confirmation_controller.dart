@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
 
 class SmsConfirmationController extends GetxController {
   final RxString currentText = ''.obs;
@@ -19,8 +20,7 @@ class SmsConfirmationController extends GetxController {
     //TODO: change when there will be a service to check the phone number
     String? expectedValue = '123456';
     if(expectedValue == value){
-      // here navigation
-      Get.snackbar('код совпадает', 'прям сильно совпадает');
+      AppRouter.navigateToPersonalData();
     }
   }
 }

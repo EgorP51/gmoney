@@ -12,7 +12,7 @@ class PasswordChangeScreen extends StatelessWidget {
     return SafeArea(
       child: Stack(
         children: [
-          const DefaultBackground(),
+          const DefaultBackground(withLogo: true),
           Scaffold(
             backgroundColor: Colors.transparent,
             body: Center(

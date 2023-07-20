@@ -9,6 +9,13 @@ class InitialScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(const Duration(seconds: 1), () {
+        AppRouter.navigateToAuthorization();
+      });
+    });
+
     return GestureDetector(
       onTap: () {
         AppRouter.navigateToAuthorization();

@@ -18,7 +18,10 @@ class GMoneyBackButton extends StatelessWidget {
         icon: Container(
           width: AppSize.itemHeight(context, 42),
           height: AppSize.itemHeight(context, 42),
-          margin: const EdgeInsets.only(top: 12, left: 8),
+          margin: const EdgeInsets.only(
+            //top: 12,
+            left: 8,
+          ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: context.gmoneyColors.buttonColor,

@@ -14,7 +14,7 @@ class SmsConfirmationScreen extends StatelessWidget {
     return SafeArea(
       child: Stack(
         children: [
-          const DefaultBackground(),
+          const DefaultBackground(withLogo: true),
           Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.transparent,

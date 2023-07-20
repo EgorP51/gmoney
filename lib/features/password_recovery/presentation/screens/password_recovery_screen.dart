@@ -28,7 +28,7 @@ class PasswordRecoveryScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
-            const DefaultBackground(),
+            const DefaultBackground(withLogo: true),
             Scaffold(
               resizeToAvoidBottomInset: false,
               backgroundColor: Colors.transparent,
