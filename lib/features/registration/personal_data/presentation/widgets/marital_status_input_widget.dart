@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gmoney_app/features/registration/personal_data/domain/controllers/personal_data_controller.dart';
-import 'package:gmoney_app/features/registration/personal_data/presentation/widgets/custom_dropdown.dart';
+import 'package:gmoney_app/core/ui/widgets/custom_dropdown.dart';
 
 class MaritalStatusInputWidget extends GetView<PersonalDataController> {
   const MaritalStatusInputWidget({super.key});
