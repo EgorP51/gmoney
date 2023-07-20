@@ -8,13 +8,16 @@ class CustomDropdown extends StatefulWidget {
     super.key,
     required this.label,
     required this.items,
-    required this.controller, required this.isEmptyFieldValidation,
+    required this.controller,
+    required this.isEmptyFieldValidation,
+    this.validator,
   });
 
   final String? label;
   final List<String> items;
   final TextEditingController controller;
   final bool isEmptyFieldValidation;
+  final String? Function(String?)? validator;
 
   @override
   CustomDropdownState createState() => CustomDropdownState();
@@ -32,6 +35,7 @@ class CustomDropdownState extends State<CustomDropdown> {
           controller: widget.controller,
           label: widget.label,
           isEmptyFieldValidation: widget.isEmptyFieldValidation,
+          validator: widget.validator,
           suffixIcon: InkWell(
             onTap: () {
               setState(() {

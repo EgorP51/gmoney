@@ -12,7 +12,6 @@ class PersonalDataButton extends GetView<PersonalDataController> {
       title: Text(
         'Далее'.toUpperCase(),
       ),
-      //enabled: controller.canMoveToNextScreen,
       onPressed: () {
         controller.toNextStep();
       },

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gmoney_app/core/ui/widgets/default_background.dart';
@@ -17,6 +18,17 @@ class PersonalDataScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     PersonalDataController controller = Get.put(PersonalDataController());
+
+    if (kDebugMode) {
+      controller.surnameController.text = 'Пворааы';
+      controller.nameController.text = 'Дгнеапр';
+      controller.patronymicController.text = 'Олпапол';
+      controller.dateOfBirthController.text = '02/05/2000';
+      controller.workPhoneController.text = '0957465342';
+      controller.homePhoneController.text = '0957465342';
+      controller.familyStatusController.text = 'тут все норм';
+    }
+
     return SafeArea(
       child: Stack(
         children: [

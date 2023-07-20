@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
 
 class PersonalDataController extends GetxController {
   final loginFormKey = GlobalKey<FormState>();
@@ -122,6 +123,7 @@ class PersonalDataController extends GetxController {
     if (isValid) {
       // code for next step
       canMoveToNextScreen = true;
+      AppRouter.navigateToOccupationIncome();
     } else {
       Get.snackbar('Форма не прошла', 'Не соврал');
     }
