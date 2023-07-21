@@ -86,13 +86,13 @@ class PersonalDataController extends GetxController {
   }
 
   String? workPhoneNumberValidator(String? value) {
-    bool allFieldsEmpty = (surnameController.text.isEmpty &&
-        nameController.text.isEmpty &&
-        patronymicController.text.isEmpty &&
-        dateOfBirthController.text.isEmpty &&
-        (!isFemale.value || !isMale.value) &&
-        familyStatusController.text.isEmpty &&
-        homePhoneController.text.isEmpty &&
+    bool allFieldsEmpty = (surnameController.text.isEmpty ||
+        nameController.text.isEmpty ||
+        patronymicController.text.isEmpty ||
+        dateOfBirthController.text.isEmpty ||
+        (!isFemale.value || !isMale.value) ||
+        familyStatusController.text.isEmpty ||
+        homePhoneController.text.isEmpty ||
         workPhoneController.text.isEmpty);
 
     if ((value == null || value.isEmpty) && allFieldsEmpty) {

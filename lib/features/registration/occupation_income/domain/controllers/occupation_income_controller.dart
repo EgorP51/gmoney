@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
 
 class OccupationIncomeController extends GetxController {
   final occupationIncomeFormKey = GlobalKey<FormState>();
@@ -108,6 +109,7 @@ class OccupationIncomeController extends GetxController {
     if (isValid) {
       // code for next step
       canMoveToNextScreen = true;
+      AppRouter.navigateToRegistrationAddress();
     } else {
       Get.snackbar('Форма не прошла', 'Не соврал');
     }

@@ -7,6 +7,7 @@ import 'package:gmoney_app/features/privacy_agreement/presentation/privacy_agree
 import 'package:gmoney_app/features/registration/contact_Information/presentation/screens/contact_information_screen.dart';
 import 'package:gmoney_app/features/registration/occupation_income/presentation/screens/occupation_income_screen.dart';
 import 'package:gmoney_app/features/registration/personal_data/presentation/screens/personal_data_screen.dart';
+import 'package:gmoney_app/features/registration/registration_address/presentation/screens/registration_address_screen.dart';
 import 'package:gmoney_app/features/registration/sms_confirmation/presentation/screens/sms_confirmation_screen.dart';
 
 class AppRouter {
@@ -19,6 +20,7 @@ class AppRouter {
   static const smsConfirmation = '/sms_confirmation';
   static const personalData = '/personal_data';
   static const occupationIncome = '/occupation_income';
+  static const registrationAddress = '/registration_address';
 
   static List<GetPage> get pages => [
         GetPage(name: initialRoute, page: () => const InitialScreen()),
@@ -31,7 +33,12 @@ class AppRouter {
         GetPage(name: smsConfirmation, page: () => const SmsConfirmationScreen()),
         GetPage(name: personalData, page: () => const PersonalDataScreen()),
         GetPage(name: occupationIncome, page: () => const OccupationIncomeScreen()),
+        GetPage(name: registrationAddress, page: () => const RegistrationAddressScreen()),
       ];
+
+  static void navigateToRegistrationAddress() {
+    Get.toNamed(registrationAddress);
+  }
 
   static void navigateToOccupationIncome() {
     Get.toNamed(occupationIncome);

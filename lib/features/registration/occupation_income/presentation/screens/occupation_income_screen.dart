@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gmoney_app/core/ui/widgets/default_background.dart';
@@ -16,6 +17,16 @@ class OccupationIncomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OccupationIncomeController controller = Get.put(OccupationIncomeController());
+
+    if (kDebugMode) {
+      controller.aspRecipientController.text = 'Да';
+      controller.averageMonthlyIncomeController.text = '4';
+      controller.additionalMonthlyIncomeController.text = '4';
+      controller.workPlaceController.text = 'Работа с дома';
+      controller.jobPositionController.text = 'Рабочий';
+      controller.minorChildrenController.text = '0';
+    }
+    
     return SafeArea(
       child: Stack(
         children: [
