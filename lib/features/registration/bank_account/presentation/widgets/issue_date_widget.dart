@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:gmoney_app/core/ui/widgets/gmoney_text_field.dart';
-import 'package:gmoney_app/features/registration/personal_data/domain/controllers/personal_data_controller.dart';
 import 'package:gmoney_app/core/ui/widgets/custom_calendar.dart';
+import 'package:gmoney_app/core/ui/widgets/gmoney_text_field.dart';
+import 'package:gmoney_app/features/registration/bank_account/domain/controllers/bank_account_controller.dart';
 
-class DateOfBirthPickerWidget extends GetView<PersonalDataController> {
-  const DateOfBirthPickerWidget({super.key});
+class IssueDateWidget extends GetView<BankAccountController> {
+  const IssueDateWidget(this.isEmptyFieldValidation, {super.key});
+
+  final bool isEmptyFieldValidation;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,10 @@ class DateOfBirthPickerWidget extends GetView<PersonalDataController> {
       mainAxisSize: MainAxisSize.min,
       children: [
         GMoneyTextField(
-          label: 'Дата рождения',
-          controller: controller.dateOfBirthController,
-          isEmptyFieldValidation: controller.isDateOfBirthEmpty.value,
-          validator: (value) =>  controller.dateValidator(value),
+          label: 'Дата выдачи',
+          controller: controller.issueDateController,
+          isEmptyFieldValidation: isEmptyFieldValidation,
+          validator: (value) => controller.dateValidator(value),
           suffixIcon: GestureDetector(
             onTap: () {
               FocusScope.of(context).unfocus();
@@ -36,15 +38,16 @@ class DateOfBirthPickerWidget extends GetView<PersonalDataController> {
         Obx(
           () => controller.isCalendarShown.value
               ? Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: GMoneyCustomCalendar(
-                    onDateSelected: (selectedDateTime){
+                    onDateSelected: (selectedDateTime) {
                       controller
-                        ..dateOfBirth = selectedDateTime
-                        ..dateOfBirthController.text =
+                        ..issueDate = selectedDateTime
+                        ..issueDateController.text =
                             '${selectedDateTime.day.toString().padLeft(2, '0')}/'
-                            '${selectedDateTime.month.toString().padLeft(2, '0')}/'
-                            '${selectedDateTime.year.toString()}';
+                                '${selectedDateTime.month.toString().padLeft(2, '0')}/'
+                                '${selectedDateTime.year.toString()}';
                     },
                   ),
                 )

@@ -37,15 +37,14 @@ class GMoneyTextField extends StatelessWidget {
       ),
       child: SizedBox(
         //TODO: check if it normalno?
-        //height: AppSize.itemHeight(context, 60),
         child: TextFormField(
+          autocorrect: false,
+          enableSuggestions: false,
           onTap: onTap,
           controller: controller,
           keyboardType: textInputType,
-          enableSuggestions: false,
           textInputAction: textInputAction,
           enableIMEPersonalizedLearning: false,
-          autocorrect: false,
           onSaved: onSaved,
           enableInteractiveSelection: false,
           obscureText: obscureText,

@@ -4,6 +4,7 @@ import 'package:gmoney_app/features/initial_screen.dart';
 import 'package:gmoney_app/features/password_recovery/presentation/screens/password_change_screen.dart';
 import 'package:gmoney_app/features/password_recovery/presentation/screens/password_recovery_screen.dart';
 import 'package:gmoney_app/features/privacy_agreement/presentation/privacy_agreement_screen.dart';
+import 'package:gmoney_app/features/registration/bank_account/presentation/screens/bank_account_screen.dart';
 import 'package:gmoney_app/features/registration/contact_Information/presentation/screens/contact_information_screen.dart';
 import 'package:gmoney_app/features/registration/occupation_income/presentation/screens/occupation_income_screen.dart';
 import 'package:gmoney_app/features/registration/personal_data/presentation/screens/personal_data_screen.dart';
@@ -21,6 +22,7 @@ class AppRouter {
   static const personalData = '/personal_data';
   static const occupationIncome = '/occupation_income';
   static const registrationAddress = '/registration_address';
+  static const bankAccount = '/bankAccount';
 
   static List<GetPage> get pages => [
         GetPage(name: initialRoute, page: () => const InitialScreen()),
@@ -34,7 +36,12 @@ class AppRouter {
         GetPage(name: personalData, page: () => const PersonalDataScreen()),
         GetPage(name: occupationIncome, page: () => const OccupationIncomeScreen()),
         GetPage(name: registrationAddress, page: () => const RegistrationAddressScreen()),
+        GetPage(name: bankAccount, page: () => const BankAccountScreen()),
       ];
+
+  static void navigateToBankAccount() {
+    Get.toNamed(bankAccount);
+  }
 
   static void navigateToRegistrationAddress() {
     Get.toNamed(registrationAddress);

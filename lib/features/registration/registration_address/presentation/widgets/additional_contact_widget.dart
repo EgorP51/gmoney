@@ -13,36 +13,33 @@ class AdditionalContactWidget extends GetView<RegistrationAddressController> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Obx(
-              () =>
-              GMoneyTextField(
-                label: 'Имя',
-                controller: controller.nameController,
-                isEmptyFieldValidation: controller.isNameEmpty.value,
-                validator: (value) => controller.nameValidator(value),
-              ),
+          () => GMoneyTextField(
+            label: 'Имя',
+            controller: controller.nameController,
+            isEmptyFieldValidation: controller.isNameEmpty.value,
+            validator: (value) => controller.nameValidator(value),
+          ),
         ),
         Obx(
-              () =>
-              GMoneyTextField(
-                label: 'Фамилия',
-                controller: controller.surnameController,
-                isEmptyFieldValidation: controller.isSurnameEmpty.value,
-                validator: (value) => controller.surnameValidator(value),
-              ),
+          () => GMoneyTextField(
+            label: 'Фамилия',
+            controller: controller.surnameController,
+            isEmptyFieldValidation: controller.isSurnameEmpty.value,
+            validator: (value) => controller.surnameValidator(value),
+          ),
         ),
         Obx(
-              () =>
-              CustomDropdown(
-                label: 'Родство',
-                isEmptyFieldValidation: controller.isKinshipEmpty.value,
-                items: const [
-                  'Домашний',
-                  'Родственник',
-                  'Друг / Подруга',
-                ],
-                validator: (value) => controller.kinshipValidator(value),
-                controller: controller.kinshipController,
-              ),
+          () => CustomDropdown(
+            label: 'Родство',
+            isEmptyFieldValidation: controller.isKinshipEmpty.value,
+            items: const [
+              'Домашний',
+              'Родственник',
+              'Друг / Подруга',
+            ],
+            validator: (value) => controller.kinshipValidator(value),
+            controller: controller.kinshipController,
+          ),
         ),
         GMoneyTextField(
           label: '+354759276402',

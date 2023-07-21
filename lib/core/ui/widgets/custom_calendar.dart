@@ -139,7 +139,12 @@ enum StartWeekDay { sunday, monday }
 enum CalendarViews { dates, months, year }
 
 class GMoneyCustomCalendar extends StatefulWidget {
-  const GMoneyCustomCalendar({super.key});
+  const GMoneyCustomCalendar({
+    required this.onDateSelected,
+    super.key,
+  });
+
+  final void Function(DateTime selectedDateTime) onDateSelected;
 
   @override
   GMoneyCustomCalendarState createState() => GMoneyCustomCalendarState();
@@ -311,12 +316,7 @@ class GMoneyCustomCalendarState extends State<GMoneyCustomCalendar> {
           }
           setState(() {
             _selectedDateTime = calendarDate.date;
-            Get.find<PersonalDataController>()
-              ..dateOfBirth = _selectedDateTime
-              ..dateOfBirthController.text =
-                  '${_selectedDateTime.day.toString().padLeft(2, '0')}/'
-                      '${_selectedDateTime.month.toString().padLeft(2, '0')}/'
-                      '${_selectedDateTime.year.toString()}';
+            widget.onDateSelected(_selectedDateTime);
           });
         }
       },

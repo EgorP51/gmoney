@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:gmoney_app/core/navigation/app_router.dart';
 
 class RegistrationAddressController extends GetxController {
   final addressFormKey = GlobalKey<FormState>();
@@ -207,6 +208,7 @@ class RegistrationAddressController extends GetxController {
 
     if (isValid) {
       // code for next step
+      AppRouter.navigateToBankAccount();
     } else {
       Get.snackbar('Форма не прошла', 'Не соврал');
     }
